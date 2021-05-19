@@ -5,12 +5,15 @@ import mod.Lobby;
 import mod.Player;
 import view.MapMaker;
 
+//The JOP class controls all the JOptionPane outputs that are used when the buttons are clicked.
 public class JOP {
 	
+	//Outputs a message
 	public static void msg(Object msg) {
 		JOptionPane.showMessageDialog(null, msg);
 	}
 	
+	//returns what the user inputs
 	public static String in(Object msg){
 		return JOptionPane.showInputDialog(msg);
 	}

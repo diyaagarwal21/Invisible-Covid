@@ -2,6 +2,14 @@ package mod;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents the Engineering Room at TERRA, which extends the Classroom class.
+ * It uses the methods from its parent class to create a maze for the player
+ * to move through.
+ * (Look at parent class [Classroom] to see the uses of Classroom and its classes)
+ * 
+ * The task of the Engineering Room is -> use the 3D printer.
+ */
 public class EngRoom extends Classroom {
 	
 	/**

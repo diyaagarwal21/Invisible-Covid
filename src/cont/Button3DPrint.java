@@ -1,16 +1,15 @@
 package cont;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-
 import mod.Player;
 import view.MapMaker;
 
+//This class controls the actions/clicks of the 'Use 3D Printer" button in the Engineering room class.
+
 public class Button3DPrint implements ActionListener {
-	
+
 	private JButton _button;
 	private Player _ply;
 	private MapMaker _mm;
@@ -21,6 +20,12 @@ public class Button3DPrint implements ActionListener {
 		_mm = m;
 		
 	}
+	
+	/**
+	 * When you click the 3D printer button, a JOptionPane pops up, saying that you 
+	 * have completed one of your tasks. It also reminds you that you can take a COVID
+	 * test at any time. 
+	 */
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {

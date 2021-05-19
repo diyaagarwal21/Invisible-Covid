@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import mod.Player;
 import view.MapMaker;
 
+//This class controls the actions/clicks of the 'Get Lunch" button in the Courtyard class.
 public class ButtonLunch implements ActionListener {
 	
 	private JButton _button;
@@ -21,6 +22,12 @@ public class ButtonLunch implements ActionListener {
 		_mm = m;
 	}
 	
+	
+	/**
+	 * When you click the getLunch button, a JOptionPane pops up, saying that you 
+	 * have completed one of your tasks. It also reminds you that you can take a COVID
+	 * test at any time. 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

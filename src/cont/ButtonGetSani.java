@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import mod.Player;
 import view.MapMaker;
 
+//This class controls the actions/clicks of the 'Get Sanitizer" button in the Lobby class.
 public class ButtonGetSani implements ActionListener{
 
 	private JButton _button;
@@ -20,6 +21,12 @@ public class ButtonGetSani implements ActionListener{
 		_ply = new Player();
 		_mm = m;
 	}
+	
+	/**
+	 * When you click the getSanitizer button, a JOptionPane pops up, saying that you 
+	 * have completed one of your tasks. It also reminds you that you can take a COVID
+	 * test at any time. 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

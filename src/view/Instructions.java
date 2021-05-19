@@ -15,6 +15,11 @@ import javax.swing.JPanel;
 import mod.Lobby;
 import mod.Player;
 
+
+/**
+ * This class creates the introduction slides, where the instructions
+ * of the game are shown. 
+ */
 public class Instructions implements ActionListener {
 	
 	private JFrame _fra;
@@ -32,6 +37,7 @@ public class Instructions implements ActionListener {
 		makeFrame();
 	}
 	
+	//creates JFrame to add instructions
 	public void makeFrame() {
 		_fra = new JFrame("GET COVID TEST");
 		_fra.setLayout(new BorderLayout());
@@ -45,6 +51,7 @@ public class Instructions implements ActionListener {
 		_fra.setVisible(true);
 	}
 	
+	//makes panel 
 	public void makePan() {
 		_pan = new JPanel(new FlowLayout());
 		_pan.setSize(650, 600);
@@ -54,6 +61,7 @@ public class Instructions implements ActionListener {
 		_pan.setVisible(true);
 	}
 	
+	//creates the images with the instructions
 	public void makeComp() {
 		_lab = new JLabel();
 		_img = new ImageIcon(getClass().getResource("Help1.PNG"));
@@ -67,11 +75,16 @@ public class Instructions implements ActionListener {
 		
 	}
 	
+	//adds the images with instructions to the JPanel
 	public void addToPan() {
 		_pan.add(_lab);
 		_pan.add(_next);
 	}
 
+	/**
+	 * When the end of the instructions is reached, the JFrame is 
+	 * replaced with the JFrame of actual game.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

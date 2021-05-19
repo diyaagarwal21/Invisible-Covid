@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import mod.Player;
 import view.MapMaker;
 
+//This class controls the actions/clicks of the 'Get Mask" button in the Lobby class.
 public class ButtonGetMask implements ActionListener{
 
 	private JButton _button;
@@ -21,6 +22,12 @@ public class ButtonGetMask implements ActionListener{
 		_mm = m;
 	}
 	
+	
+	/**
+	 * When you click the getMask button, a JOptionPane pops up, saying that you 
+	 * have completed one of your tasks. It also reminds you that you can take a COVID
+	 * test at any time. 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

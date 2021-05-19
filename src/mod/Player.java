@@ -2,6 +2,22 @@ package mod;
 
 import view.MapMaker;
 
+/**
+ * The Player class manages all the properties of a Player object, which include:
+ *  - the row and column
+ *  - the number of times the sanitizer was used
+ *  - if the player has Covid
+ *  - if the player has used the power-up
+ *   
+ * To keep track of what tasks are completed:
+ *  - if player has mask
+ *  - if player has sanitizer
+ *  - if player has lunch
+ *  - if player has used the 3D printer yet
+ *  
+ * The Player class also changes the player's position based on the maze 
+ * (these methods are used in the LetterListener class).
+ **/
 public class Player {
 	
 	private int _row, _col; //ply row/col
@@ -51,7 +67,7 @@ public class Player {
 	public boolean getPUp() { return _hasPUp; }
 	public void setPUp(boolean b) { _hasPUp = b; }
 	
-	
+	//creates PLayer object with parameters of row and column
 	public Player(int startRow, int startCol) {
 		_row = startRow;
 		_col = startCol;
@@ -62,6 +78,7 @@ public class Player {
 		_hasPUp = false;
 	}
 	
+	//creates Player object with no parameters
 	public Player() {
 		_row = getRow();
 		_col = getCol();
@@ -72,11 +89,12 @@ public class Player {
 		_hasPUp = false;
 	}
 	
+	//checks if all tasks are completed
 	public boolean checkDone() {
 		return (hasMask() && getSani() && get3dprint() && getLunch());	
 	}
 	
-	
+	//moves player north (controlled by LetterListener class)
 	public void movePlyN(Classroom cr, int i, int j) { //moves ply North for "W"
 		int r = i;
 		int c = j;
@@ -87,6 +105,7 @@ public class Player {
 		} 
 	}
 	
+	//moves player west (controlled by LetterListener class)
 	public void movePlyW(Classroom cr, int i, int j) { //moves ply South for "S"
 		int r = i;
 		int c = j;
@@ -96,6 +115,7 @@ public class Player {
 		}
 	}
 	
+	//moves player south (controlled by LetterListener class)
 	public void movePlyS(Classroom cr, int i, int j) {  //moves ply South for "S"
 		int r = i;
 		int c = j;
@@ -107,6 +127,7 @@ public class Player {
 		}
 	}
 	
+	//moves player east (controlled by LetterListener class)
 	public void movePlyE(Classroom cr, int i, int j) { //moves ply East for "D"
 		int r = i;
 		int c = j;

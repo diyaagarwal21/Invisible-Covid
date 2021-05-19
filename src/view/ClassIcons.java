@@ -4,6 +4,18 @@ import javax.swing.ImageIcon;
 
 import mod.Player;
 
+/**
+ * This is an enum that stores all the file paths for the images 
+ * on the maze for easy access.
+ * The pictures included are: 
+ *   - player icon
+ *   - wall/desk icon
+ *   - path icon
+ *   - invisible covid icon
+ *   - powerup icon
+ *   - person with powerup icon
+ *   - task icon
+ */
 public enum ClassIcons {
 	
 	PERSON("person.png"), WALL("school-desk.png"),

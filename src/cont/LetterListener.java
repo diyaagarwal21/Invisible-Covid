@@ -17,6 +17,7 @@ import view.EngRoomView;
 import view.LobbyView;
 import view.MapMaker;
 
+//This class controls the key actions (WASD) to move player North, South, East, and West.
 public class LetterListener implements KeyListener {
 	
 	private MapMaker _mm;
@@ -51,6 +52,15 @@ public class LetterListener implements KeyListener {
 		
 	}
 
+	/**
+	 * Based on what key is released and the location (lobby, courtyard, or engineering room),
+	 * the player's position will change
+	 * W - North
+	 * A - West
+	 * S - South
+	 * D - East
+	 */
+	
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub

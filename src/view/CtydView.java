@@ -11,6 +11,11 @@ import cont.ButtonLunch;
 import mod.Lobby;
 import mod.Player;
 
+/**
+ * This class creates the JPanel for the Courtyard.
+ * It extends the ClassroomView class, which provides the layout for the 
+ * GUI for each classroom location.
+ */
 public class CtydView extends ClassroomView {
 	
 	private Player _p;
@@ -30,6 +35,7 @@ public class CtydView extends ClassroomView {
 		return _pan;
 	}
 	
+	//creates the JPanel with the correct maze as per the class with the correct buttons.
 	public void makeView() {
 		_pan = new JPanel();
 		_pan.setLayout(new GridLayout(3,1));

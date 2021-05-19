@@ -3,6 +3,14 @@ package mod;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class represents the Courtyard at TERRA, which extends the Classroom class.
+ * It uses the methods from its parent class to create a maze for the player
+ * to move through.
+ * (Look at parent class [Classroom] to see the uses of Classroom and its classes)
+ * 
+ * The task of the Courtyard is -> pick up lunch
+ */
 public class Courtyard extends Classroom {
 
 	/**

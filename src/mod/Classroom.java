@@ -7,6 +7,16 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
+/**This class is the parent class for all the locations of TERRA:
+ *(lobby, courtyard, and engineering room) --> More to be added in the future
+ *
+ * Each classroom composes of: 
+ * a maze (with Invisible COVID spread out in the maze)
+ * a moved maze (the locations where the player has moved)
+ * a starting location for the player
+ * a task to complete (more tasks to be added in the future)
+ * a powerup (being able to see the Invisible Covid for 5 seconds)
+ */
 public class Classroom {
 	
 	/* total number of inherited classes */

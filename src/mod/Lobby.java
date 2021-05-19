@@ -5,6 +5,15 @@ import java.util.Collections;
 
 import javax.swing.ImageIcon;
 
+/**
+ * This class represents the Lobby at TERRA, which extends the Classroom class.
+ * It uses the methods from its parent class to create a maze for the player
+ * to move through.
+ * (Look at parent class [Classroom] to see the uses of Classroom and its classes)
+ * 
+ * The two tasks of the Lobby are -> pick up a mask
+ *                                -> pick up sanitizer
+ */
 public class Lobby extends Classroom{
 
 	/**

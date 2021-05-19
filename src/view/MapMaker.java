@@ -29,6 +29,13 @@ import mod.EngRoom;
 import mod.Lobby;
 import mod.Player;
 
+/**
+ * This class, MapMaker, mainly controls all the GUI components. 
+ * It creates all the buttons, frame, panels, labels (for the maze),
+ * and the timer for the powerup (to see the Invisible Covid for 5 seconds).
+ * @author diyaa
+ *
+ */
 public class MapMaker extends TimerTask implements ActionListener  {
 	
 	private JButton _restart, _help, _seelayout, _exit, _sani, _ctest, _move,
@@ -86,6 +93,7 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		validateFrame();
 	}
 	
+	//creates a 2D array JLabel to make the maze
 	public void initLabel() {
 		_subPanC.removeAll();
 		_view = new JLabel[12][12];
@@ -171,6 +179,7 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		validatePanel();
 	}
 	
+	//adds each panel to their respective sections on the GridLayout
 	private void addToPan() {
 		setN();
 		setS();
@@ -235,11 +244,6 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		_subPanW.add(_restart); 
 		_subPanW.add(_exit);
 		
-//		_move = new JButton("moved maze");
-//		_move.setFocusable(false);
-//		_move.addActionListener(this);
-//		//_subPanW.add(_move);	
-		
 		_subPanW.add(_ctest);
 		_pan.add(_subPanW, BorderLayout.WEST);
 	}
@@ -248,6 +252,7 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		_pan.add(_subPanC, BorderLayout.CENTER);
 	}
 	
+	//initializes all the buttons
 	private void initButtons() {
 		_restart = new JButton("Restart");
 		_help = new JButton("Help");
@@ -271,6 +276,7 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		_help.addActionListener(this);
 	}
 	
+	//validates all the JPanels
 	public void validatePanel() {
 		_pan.repaint();
 		_pan.validate();
@@ -289,12 +295,14 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		_subPanC.setVisible(true);
 	}
 	
+	//validates Frame
 	private void validateFrame() {
 		_fra.repaint();
 		_fra.validate();
 		_fra.setVisible(true);
 	}
 	
+	//validates JLabel with the maze
 	private void validateLabel(int row, int col) {
 		_view[row][col].repaint();
 		_view[row][col].validate();
@@ -303,6 +311,10 @@ public class MapMaker extends TimerTask implements ActionListener  {
 	
 	public void setTextL(String s) { _tasks.setText(s); }
 	
+	/**
+	 * when the player's position changes, this method replaces both spaces with 
+	 * the correct image icon.
+	**/
 	public void changePlayerPos(Classroom cl, int r, int c) {
 		int row = _ply.getRow();
 		int col = _ply.getCol();
@@ -387,6 +399,10 @@ public class MapMaker extends TimerTask implements ActionListener  {
 	}
 	public Player getPly() { return _ply; }
 
+	
+	/**
+	 * Manages the actions of the buttons (what to print, what values to change, etc.)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -544,6 +560,15 @@ public class MapMaker extends TimerTask implements ActionListener  {
 		initLabel();
 	}
 	
+	/**
+	 * MOST IMPORTANT METHOD!! 
+	 * This method calculates if the player has COVID based on if: 
+	 *   - they have a mask
+	 *   - they use their sanitizer
+	 *   - they stayed away from the invisible COVID
+	 * @return true if based on calculations, player has COVID
+	 * @return false if based on calculations, player does not have COVID
+	 */
 	public boolean calculateCovid() {
 		int numTouched = _totalTouch;
 		double numSani = 10 - _saniAmount;
